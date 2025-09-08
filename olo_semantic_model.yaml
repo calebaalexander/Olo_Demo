@@ -1,0 +1,777 @@
+name: Olo_Semantic_Model
+description: Comprehensive semantic model for Olo restaurant platform data including restaurants, customers, orders, menu items, drivers, and promotions
+tables:
+  - name: RESTAURANTS
+    synonyms:
+      - Eateries
+      - Dining Establishments
+      - Food Outlets
+      - Restaurants
+      - Cafes
+      - Bistros
+      - Food Places
+      - Dining Spots
+      - Food Establishments
+    description: Restaurant partner information and operational details
+    base_table:
+      database: OLO_AISQL_DEMO
+      schema: RESTAURANT_DATA
+      table: RESTAURANTS
+    dimensions:
+      - name: city
+        synonyms:
+          - location
+          - area
+          - town
+        description: City where restaurant is located
+        expr: city
+        data_type: VARCHAR
+        sample_values:
+          - Seattle
+          - Portland
+          - San Francisco
+      - name: cuisine_type
+        synonyms:
+          - cuisine
+          - food type
+          - category
+          - style
+        description: Type of cuisine offered (Italian, Chinese, American, etc.)
+        expr: cuisine_type
+        data_type: VARCHAR
+        sample_values:
+          - Italian
+          - Chinese
+          - American
+      - name: owner_name
+        synonyms:
+          - owner
+          - proprietor
+          - manager
+        description: Name of the restaurant owner
+        expr: owner_name
+        data_type: VARCHAR
+        sample_values:
+          - Marco Rossi
+          - Li Wei
+          - Sarah Johnson
+      - name: restaurant_id
+        synonyms:
+          - restaurant ID
+          - restaurant identifier
+        description: Unique identifier for the restaurant
+        expr: restaurant_id
+        data_type: NUMBER
+        sample_values:
+          - '1001'
+          - '1002'
+          - '1003'
+      - name: restaurant_name
+        synonyms:
+          - restaurant
+          - partner
+          - location
+          - establishment
+        description: Name of the restaurant
+        expr: restaurant_name
+        data_type: VARCHAR
+        sample_values:
+          - Bella Vista Italian
+          - Dragon Palace Chinese
+          - Burger Junction
+      - name: state
+        synonyms:
+          - region
+          - province
+        description: State or region where restaurant operates
+        expr: state
+        data_type: VARCHAR
+        sample_values:
+          - WA
+          - OR
+          - CA
+      - name: status
+        synonyms:
+          - restaurant status
+          - operational status
+        description: Current operational status of the restaurant
+        expr: status
+        data_type: VARCHAR
+        sample_values:
+          - active
+          - inactive
+          - pending
+    facts:
+      - name: avg_prep_time_minutes
+        synonyms:
+          - preparation time
+          - cook time
+          - prep time
+        description: Average time to prepare orders in minutes
+        expr: avg_prep_time_minutes
+        data_type: NUMBER
+        sample_values:
+          - '25'
+          - '30'
+          - '20'
+        default_aggregation: avg
+      - name: delivery_fee
+        synonyms:
+          - delivery cost
+          - shipping fee
+          - delivery charge
+        description: Fee charged for delivery service
+        expr: delivery_fee
+        data_type: NUMBER
+        sample_values:
+          - '3.99'
+          - '4.50'
+          - '2.99'
+        default_aggregation: avg
+      - name: minimum_order
+        synonyms:
+          - minimum order amount
+          - min order
+          - order minimum
+        description: Minimum order amount required
+        expr: minimum_order
+        data_type: NUMBER
+        sample_values:
+          - '15.00'
+          - '20.00'
+          - '12.00'
+        default_aggregation: avg
+    primary_key:
+      columns:
+        - restaurant_id
+  - name: CUSTOMERS
+    synonyms: []
+    description: Customer profiles and loyalty information
+    base_table:
+      database: OLO_AISQL_DEMO
+      schema: RESTAURANT_DATA
+      table: CUSTOMERS
+    dimensions:
+      - name: city
+        synonyms:
+          - customer location
+          - customer city
+        description: Customer's city
+        expr: city
+        data_type: VARCHAR
+        sample_values:
+          - Seattle
+          - Portland
+          - San Francisco
+      - name: customer_id
+        synonyms:
+          - customer ID
+          - customer identifier
+        description: Unique identifier for the customer
+        expr: customer_id
+        data_type: NUMBER
+        sample_values:
+          - '2001'
+          - '2002'
+          - '2003'
+      - name: first_name
+        synonyms:
+          - customer name
+          - name
+        description: Customer's first name
+        expr: first_name
+        data_type: VARCHAR
+        sample_values:
+          - John
+          - Sarah
+          - Michael
+      - name: last_name
+        synonyms:
+          - surname
+          - family name
+        description: Customer's last name
+        expr: last_name
+        data_type: VARCHAR
+        sample_values:
+          - Smith
+          - Johnson
+          - Williams
+      - name: last_order_date
+        synonyms:
+          - last order
+          - most recent order
+        description: Date of customer's most recent order
+        expr: last_order_date
+        data_type: DATE
+        sample_values:
+          - '2024-01-15'
+          - '2024-01-20'
+          - '2024-01-25'
+      - name: loyalty_tier
+        synonyms:
+          - loyalty level
+          - membership tier
+          - customer tier
+        description: Customer loyalty program tier (Bronze, Silver, Gold, Platinum)
+        expr: loyalty_tier
+        data_type: VARCHAR
+        sample_values:
+          - Bronze
+          - Silver
+          - Gold
+          - Platinum
+      - name: preferred_cuisine
+        synonyms:
+          - favorite cuisine
+          - preferred food type
+        description: Customer's preferred cuisine type
+        expr: preferred_cuisine
+        data_type: VARCHAR
+        sample_values:
+          - Italian
+          - Chinese
+          - American
+      - name: state
+        synonyms:
+          - customer state
+          - customer region
+        description: Customer's state
+        expr: state
+        data_type: VARCHAR
+        sample_values:
+          - WA
+          - OR
+          - CA
+    facts:
+      - name: total_orders
+        synonyms:
+          - order count
+          - number of orders
+          - orders placed
+        description: Total number of orders placed by customer
+        expr: total_orders
+        data_type: NUMBER
+        sample_values:
+          - '25'
+          - '42'
+          - '18'
+        default_aggregation: sum
+      - name: total_spent
+        synonyms:
+          - customer value
+          - lifetime value
+          - total revenue
+          - spend
+        description: Total amount spent by customer
+        expr: total_spent
+        data_type: NUMBER
+        sample_values:
+          - '456.78'
+          - '892.45'
+          - '234.56'
+        default_aggregation: sum
+    primary_key:
+      columns:
+        - customer_id
+  - name: ORDERS
+    synonyms:
+      - orders
+      - purchase
+      - transaction
+      - sale
+      - booking
+      - reservation
+      - food_order
+      - restaurant_order
+      - customer_order
+    description: Customer order transactions and delivery details
+    base_table:
+      database: OLO_AISQL_DEMO
+      schema: RESTAURANT_DATA
+      table: ORDERS
+    dimensions:
+      - name: customer_id
+        synonyms:
+          - customer ID
+          - customer identifier
+        description: ID of the customer who placed the order
+        expr: customer_id
+        data_type: NUMBER
+        sample_values:
+          - '2001'
+          - '2002'
+          - '2003'
+      - name: order_date
+        synonyms:
+          - date
+          - when
+          - order day
+        description: Date when order was placed
+        expr: order_date
+        data_type: DATE
+        sample_values:
+          - '2024-01-15'
+          - '2024-01-16'
+          - '2024-01-17'
+      - name: order_id
+        synonyms:
+          - order ID
+          - order identifier
+          - order number
+        description: Unique identifier for the order
+        expr: order_id
+        data_type: NUMBER
+        sample_values:
+          - '5001'
+          - '5002'
+          - '5003'
+      - name: order_time
+        synonyms:
+          - time
+          - order time
+        description: Time when order was placed
+        expr: order_time
+        data_type: TIME
+        sample_values:
+          - '12:30:00'
+          - '18:45:00'
+          - '19:15:00'
+      - name: restaurant_id
+        synonyms:
+          - restaurant ID
+          - restaurant identifier
+        description: ID of the restaurant fulfilling the order
+        expr: restaurant_id
+        data_type: NUMBER
+        sample_values:
+          - '1001'
+          - '1002'
+          - '1003'
+      - name: status
+        synonyms:
+          - order status
+          - delivery status
+          - state
+        description: Current status of the order (pending, delivered, cancelled)
+        expr: status
+        data_type: VARCHAR
+        sample_values:
+          - delivered
+          - pending
+          - cancelled
+    facts:
+      - name: delivery_fee
+        synonyms:
+          - delivery cost
+          - shipping cost
+        description: Delivery fee for the order
+        expr: delivery_fee
+        data_type: NUMBER
+        sample_values:
+          - '3.99'
+          - '4.50'
+          - '2.99'
+        default_aggregation: avg
+      - name: delivery_time_minutes
+        synonyms:
+          - delivery time
+          - time to deliver
+          - delivery duration
+        description: Time taken to deliver the order in minutes
+        expr: actual_delivery_time
+        data_type: NUMBER
+        sample_values:
+          - '35'
+          - '28'
+          - '42'
+        default_aggregation: avg
+      - name: tip_amount
+        synonyms:
+          - tip
+          - gratuity
+        description: Tip amount given by customer
+        expr: tip
+        data_type: NUMBER
+        sample_values:
+          - '8.50'
+          - '6.00'
+          - '12.00'
+        default_aggregation: sum
+      - name: total_amount
+        synonyms:
+          - revenue
+          - sales
+          - order value
+          - order total
+          - amount
+        description: Total amount of the order including items and fees
+        expr: total_amount
+        data_type: NUMBER
+        sample_values:
+          - '45.67'
+          - '32.89'
+          - '78.45'
+        default_aggregation: sum
+    primary_key:
+      columns:
+        - order_id
+  - name: MENU_ITEMS
+    synonyms:
+      - menu_items
+      - dishes
+      - food_items
+      - restaurant_menu
+      - menu_list
+      - food_list
+      - items
+      - menu_options
+      - restaurant_items
+    description: Restaurant menu items with pricing and dietary information
+    base_table:
+      database: OLO_AISQL_DEMO
+      schema: RESTAURANT_DATA
+      table: MENU_ITEMS
+    dimensions:
+      - name: category
+        synonyms:
+          - menu category
+          - food category
+          - item type
+        description: Category of the menu item (appetizer, entree, dessert, etc.)
+        expr: category
+        data_type: VARCHAR
+        sample_values:
+          - Pizza
+          - Entree
+          - Burger
+      - name: description
+        synonyms:
+          - item description
+          - dish description
+        description: Detailed description of the menu item
+        expr: description
+        data_type: VARCHAR
+        sample_values:
+          - Fresh mozzarella, tomato sauce, basil
+          - Spicy chicken with peanuts and vegetables
+          - Beef patty with lettuce, tomato, onion
+      - name: is_gluten_free
+        synonyms:
+          - gluten free
+          - gluten-free
+          - GF
+        description: Whether the item is gluten-free
+        expr: is_gluten_free
+        data_type: BOOLEAN
+        sample_values:
+          - 'true'
+          - 'false'
+      - name: is_vegan
+        synonyms:
+          - vegan
+          - plant-based
+        description: Whether the item is vegan-friendly
+        expr: is_vegan
+        data_type: BOOLEAN
+        sample_values:
+          - 'true'
+          - 'false'
+      - name: is_vegetarian
+        synonyms:
+          - vegetarian
+          - veggie
+        description: Whether the item is vegetarian-friendly
+        expr: is_vegetarian
+        data_type: BOOLEAN
+        sample_values:
+          - 'true'
+          - 'false'
+      - name: item_id
+        synonyms:
+          - item ID
+          - menu item ID
+          - product ID
+        description: Unique identifier for the menu item
+        expr: item_id
+        data_type: NUMBER
+        sample_values:
+          - '3001'
+          - '3002'
+          - '3003'
+      - name: item_name
+        synonyms:
+          - menu item
+          - dish
+          - food item
+          - product
+        description: Name of the menu item
+        expr: item_name
+        data_type: VARCHAR
+        sample_values:
+          - Margherita Pizza
+          - Kung Pao Chicken
+          - Classic Burger
+      - name: restaurant_id
+        synonyms:
+          - restaurant ID
+          - restaurant identifier
+        description: ID of the restaurant offering this menu item
+        expr: restaurant_id
+        data_type: NUMBER
+        sample_values:
+          - '1001'
+          - '1002'
+          - '1003'
+    facts:
+      - name: calories
+        synonyms:
+          - calorie count
+          - nutrition
+        description: Caloric content of the menu item
+        expr: calories
+        data_type: NUMBER
+        sample_values:
+          - '650'
+          - '480'
+          - '720'
+        default_aggregation: avg
+      - name: popularity_score
+        synonyms:
+          - popularity
+          - rating
+          - score
+        description: Popularity score of the menu item
+        expr: popularity_score
+        data_type: NUMBER
+        sample_values:
+          - '8.5'
+          - '7.2'
+          - '9.1'
+        default_aggregation: avg
+      - name: price
+        synonyms:
+          - cost
+          - menu price
+          - item price
+        description: Price of the menu item
+        expr: price
+        data_type: NUMBER
+        sample_values:
+          - '16.99'
+          - '14.50'
+          - '12.99'
+        default_aggregation: avg
+    primary_key:
+      columns:
+        - item_id
+  - name: ORDER_ITEMS
+    synonyms:
+      - order_items
+      - order_item
+      - order_details
+      - item_orders
+      - order_line_items
+      - order_item_details
+      - itemized_orders
+      - order_components
+    description: Individual items within customer orders
+    base_table:
+      database: OLO_AISQL_DEMO
+      schema: RESTAURANT_DATA
+      table: ORDER_ITEMS
+    dimensions:
+      - name: item_id
+        synonyms:
+          - item ID
+          - menu item ID
+          - product ID
+        description: ID of the menu item being ordered
+        expr: item_id
+        data_type: NUMBER
+        sample_values:
+          - '3001'
+          - '3002'
+          - '3003'
+      - name: order_id
+        synonyms:
+          - order ID
+          - order identifier
+        description: ID of the order this item belongs to
+        expr: order_id
+        data_type: NUMBER
+        sample_values:
+          - '5001'
+          - '5002'
+          - '5003'
+      - name: order_item_id
+        synonyms:
+          - order item ID
+          - line item ID
+        description: Unique identifier for the order item
+        expr: order_item_id
+        data_type: NUMBER
+        sample_values:
+          - '7001'
+          - '7002'
+          - '7003'
+      - name: quantity
+        synonyms:
+          - qty
+          - amount ordered
+          - number ordered
+        description: Quantity of the item ordered
+        expr: quantity
+        data_type: NUMBER
+        sample_values:
+          - '1'
+          - '2'
+          - '3'
+    facts:
+      - name: total_price
+        synonyms:
+          - line total
+          - item total
+          - line amount
+        description: Total price for this line item (quantity × unit price)
+        expr: total_price
+        data_type: NUMBER
+        sample_values:
+          - '16.99'
+          - '29.00'
+          - '38.97'
+        default_aggregation: sum
+      - name: unit_price
+        synonyms:
+          - item price
+          - price per unit
+        description: Price per unit of the item
+        expr: unit_price
+        data_type: NUMBER
+        sample_values:
+          - '16.99'
+          - '14.50'
+          - '12.99'
+        default_aggregation: avg
+    primary_key:
+      columns:
+        - order_item_id
+relationships:
+  - name: restaurant_orders
+    left_table: restaurants
+    right_table: orders
+    relationship_columns:
+      - left_column: restaurant_id
+        right_column: restaurant_id
+  - name: customer_orders
+    left_table: customers
+    right_table: orders
+    relationship_columns:
+      - left_column: customer_id
+        right_column: customer_id
+  - name: restaurant_menu_items
+    left_table: restaurants
+    right_table: menu_items
+    relationship_columns:
+      - left_column: restaurant_id
+        right_column: restaurant_id
+  - name: order_line_items
+    left_table: orders
+    right_table: order_items
+    relationship_columns:
+      - left_column: order_id
+        right_column: order_id
+  - name: menu_item_orders
+    left_table: menu_items
+    right_table: order_items
+    relationship_columns:
+      - left_column: item_id
+        right_column: item_id
+verified_queries:
+  - name: Show me the top 5 restaurants by total revenue in 2024, including their total orders, average order value, and customer count
+    question: Show me the top 5 restaurants by total revenue in 2024, including their total orders, average order value, and customer count
+    sql: |-
+      WITH yearly_revenue AS (
+        SELECT
+          o.restaurant_id,
+          COUNT(DISTINCT o.order_id) AS total_orders,
+          SUM(o.total_amount) AS total_revenue,
+          AVG(o.total_amount) AS average_order_value,
+          COUNT(DISTINCT o.customer_id) AS customer_count
+        FROM
+          orders AS o
+        WHERE
+          DATE_PART('YEAR', o.order_date) = 2024
+        GROUP BY
+          o.restaurant_id
+      ),
+      ranked_revenue AS (
+        SELECT
+          yr.restaurant_id,
+          r.restaurant_name,
+          yr.total_orders,
+          yr.total_revenue,
+          yr.average_order_value,
+          customer_count,
+          RANK() OVER (
+            ORDER BY
+              yr.total_revenue DESC NULLS LAST
+          ) AS rnk
+        FROM
+          yearly_revenue AS yr
+          INNER JOIN restaurants AS r ON r.restaurant_id = yr.restaurant_id
+      )
+      SELECT
+        restaurant_name,
+        total_revenue,
+        total_orders,
+        average_order_value,
+        customer_count
+      FROM
+        ranked_revenue
+      WHERE
+        rnk <= 5
+      ORDER BY
+        total_revenue DESC NULLS LAST
+    use_as_onboarding_question: false
+    verified_by: Caleb Alexander
+    verified_at: 1757276547
+custom_instructions: |-
+  You are an AI analyst for Olo, a leading restaurant technology platform that connects restaurants with customers through digital ordering and delivery services. Your role is to help restaurant partners, platform managers, and business stakeholders understand their data and make informed decisions.
+
+  ## Business Context
+  - Olo operates a multi-sided marketplace connecting restaurants, customers, and delivery drivers
+  - Key metrics include order volume, revenue, customer satisfaction, operational efficiency, and partner growth
+  - The platform serves thousands of restaurants across multiple cities and cuisine types
+  - Success is measured by restaurant partner success, customer satisfaction, and platform growth
+
+  ## Data Understanding
+  - **Restaurants**: Partner establishments with different cuisine types, locations, and operational characteristics
+  - **Customers**: Platform users with ordering history, preferences, and loyalty levels
+  - **Orders**: Individual transactions including items, amounts, delivery details, and timing
+  - **Menu Items**: Restaurant offerings with pricing, dietary information, and popularity metrics
+  - **Order Items**: Line-level details of what customers actually purchase
+
+  ## Key Business Questions to Address
+  1. **Revenue Performance**: Which restaurants generate the most revenue? What drives high performance?
+  2. **Customer Behavior**: What do customers order most? How do preferences vary by location/cuisine?
+  3. **Operational Efficiency**: How do delivery times and prep times affect customer satisfaction?
+  4. **Market Opportunities**: Where are gaps in coverage? What cuisine types are underserved?
+  5. **Menu Optimization**: Which items drive the most orders and revenue?
+
+  ## Response Guidelines
+  - Always provide business context and actionable insights, not just numbers
+  - When showing top performers, explain what makes them successful
+  - Include relevant comparisons (vs. average, vs. previous period when possible)
+  - Suggest specific actions restaurant partners can take
+  - Format currency as dollars ($) and percentages appropriately
+  - Highlight trends and patterns that impact business decisions
+
+  ## Sample Insights to Provide
+  - "Italian restaurants show 23% higher average order values, likely due to family-style ordering patterns"
+  - "Restaurants with prep times under 25 minutes have 15% more repeat customers"
+  - "Vegetarian menu items represent only 12% of orders but have 18% higher profit margins"
+  - "Seattle market shows opportunity for more Asian cuisine options based on demand patterns"
+
+  Remember: Your goal is to help Olo partners grow their business and improve customer satisfaction through data-driven insights.
+
+  Use graphs if needed and round numbers to the nearest hundreth.
