@@ -1,0 +1,22 @@
+customer_id,first_name,last_name,email,phone,address,city,state,zip_code,date_registered,total_orders,total_spent,loyalty_tier,preferred_cuisine,last_order_date
+2001,John,Smith,john.smith@email.com,(206) 555-1001,"123 1st Ave",Seattle,WA,98101,2022-01-20,45,892.50,gold,Italian,2024-01-15
+2002,Sarah,Johnson,sarah.j@email.com,(425) 555-1002,"456 2nd St",Bellevue,WA,98004,2022-02-15,32,654.75,silver,Chinese,2024-01-14
+2003,Mike,Davis,mike.davis@email.com,(206) 555-1003,"789 3rd Ave",Seattle,WA,98102,2022-01-30,67,1245.80,platinum,American,2024-01-16
+2004,Emily,Wilson,emily.w@email.com,(425) 555-1004,"321 4th St",Redmond,WA,98052,2022-03-05,23,387.25,bronze,Mexican,2024-01-13
+2005,David,Brown,david.brown@email.com,(253) 555-1005,"654 5th Ave",Tacoma,WA,98401,2022-02-20,41,798.60,gold,Japanese,2024-01-15
+2006,Lisa,Garcia,lisa.garcia@email.com,(206) 555-1006,"987 6th St",Seattle,WA,98103,2022-04-10,18,298.45,bronze,Italian,2024-01-12
+2007,James,Martinez,james.m@email.com,(425) 555-1007,"147 7th Ave",Kirkland,WA,98033,2022-01-25,55,1087.90,platinum,Vegetarian,2024-01-16
+2008,Amanda,Rodriguez,amanda.r@email.com,(206) 555-1008,"258 8th St",Seattle,WA,98104,2022-03-15,29,543.20,silver,BBQ,2024-01-14
+2009,Chris,Lee,chris.lee@email.com,(425) 555-1009,"369 9th Ave",Bellevue,WA,98005,2022-02-28,38,712.35,gold,Vietnamese,2024-01-15
+2010,Jessica,Taylor,jessica.t@email.com,(206) 555-1010,"741 10th St",Seattle,WA,98105,2022-04-01,15,245.80,bronze,Mediterranean,2024-01-11
+2011,Ryan,Anderson,ryan.a@email.com,(425) 555-1011,"852 11th Ave",Redmond,WA,98053,2022-01-15,72,1456.70,platinum,American,2024-01-16
+2012,Nicole,Thomas,nicole.t@email.com,(253) 555-1012,"963 12th St",Tacoma,WA,98402,2022-03-20,26,467.90,silver,Indian,2024-01-13
+2013,Kevin,Jackson,kevin.j@email.com,(206) 555-1013,"159 13th Ave",Seattle,WA,98106,2022-02-10,34,623.45,silver,British,2024-01-14
+2014,Michelle,White,michelle.w@email.com,(425) 555-1014,"357 14th St",Kirkland,WA,98034,2022-04-05,12,189.60,bronze,Healthy,2024-01-10
+2015,Daniel,Harris,daniel.h@email.com,(206) 555-1015,"486 15th Ave",Seattle,WA,98107,2022-01-10,48,956.25,gold,Steakhouse,2024-01-15
+2016,Ashley,Clark,ashley.c@email.com,(425) 555-1016,"597 16th St",Bellevue,WA,98006,2022-03-25,21,398.70,bronze,Italian,2024-01-12
+2017,Matthew,Lewis,matthew.l@email.com,(206) 555-1017,"608 17th Ave",Seattle,WA,98108,2022-02-05,59,1134.85,platinum,Chinese,2024-01-16
+2018,Stephanie,Walker,stephanie.w@email.com,(253) 555-1018,"719 18th St",Tacoma,WA,98403,2022-04-15,17,287.40,bronze,Mexican,2024-01-11
+2019,Brandon,Hall,brandon.h@email.com,(425) 555-1019,"830 19th Ave",Redmond,WA,98054,2022-01-28,43,823.55,gold,Japanese,2024-01-15
+2020,Megan,Allen,megan.a@email.com,(206) 555-1020,"941 20th St",Seattle,WA,98109,2022-03-10,31,578.90,silver,Vegetarian,2024-01-14
+

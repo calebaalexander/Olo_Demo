@@ -1,0 +1,17 @@
+restaurant_id,restaurant_name,cuisine_type,address,city,state,zip_code,phone,email,owner_name,date_joined,status,avg_prep_time_minutes,delivery_fee,minimum_order
+1001,Bella's Italian Kitchen,Italian,"123 Main St",Seattle,WA,98101,(206) 555-0101,bella@bellasitalian.com,Maria Rossi,2022-01-15,active,25,3.99,15.00
+1002,Dragon Palace,Chinese,"456 Pine Ave",Seattle,WA,98102,(206) 555-0102,orders@dragonpalace.com,Chen Wei,2022-02-20,active,20,2.99,12.00
+1003,Burger Barn,American,"789 Oak Blvd",Bellevue,WA,98004,(425) 555-0103,info@burgerbarn.com,Mike Johnson,2022-01-30,active,15,4.99,10.00
+1004,Taco Fiesta,Mexican,"321 Cedar St",Redmond,WA,98052,(425) 555-0104,hello@tacofiesta.com,Carlos Rodriguez,2022-03-10,active,18,3.49,8.00
+1005,Sushi Zen,Japanese,"654 Maple Dr",Kirkland,WA,98033,(425) 555-0105,orders@sushizen.com,Yuki Tanaka,2022-02-05,active,30,5.99,20.00
+1006,Pizza Corner,Italian,"987 Elm St",Seattle,WA,98103,(206) 555-0106,pizza@pizzacorner.com,Tony Marinelli,2022-01-25,active,22,3.99,12.00
+1007,Green Garden Cafe,Vegetarian,"147 Birch Ln",Seattle,WA,98105,(206) 555-0107,cafe@greengarden.com,Sarah Green,2022-04-01,active,20,2.99,15.00
+1008,BBQ Smokehouse,BBQ,"258 Willow Way",Tacoma,WA,98401,(253) 555-0108,smoke@bbqhouse.com,Jim Thompson,2022-03-15,active,35,4.49,18.00
+1009,Pho Saigon,Vietnamese,"369 Cherry Ave",Seattle,WA,98104,(206) 555-0109,pho@saigonrest.com,Linh Nguyen,2022-02-28,active,25,3.99,10.00
+1010,Mediterranean Delight,Mediterranean,"741 Spruce St",Bellevue,WA,98005,(425) 555-0110,orders@meddelight.com,Omar Hassan,2022-03-20,active,28,4.99,16.00
+1011,Breakfast Nook,American,"852 Fir Rd",Redmond,WA,98053,(425) 555-0111,nook@breakfast.com,Linda Davis,2022-01-10,active,12,2.49,8.00
+1012,Curry House,Indian,"963 Ash Ct",Kirkland,WA,98034,(425) 555-0112,spice@curryhouse.com,Raj Patel,2022-04-05,active,30,3.99,14.00
+1013,Fish & Chips Co,British,"159 Poplar St",Seattle,WA,98106,(206) 555-0113,fish@chipsco.com,David Smith,2022-02-14,active,18,3.49,12.00
+1014,Smoothie Bar,Healthy,"357 Walnut Ave",Seattle,WA,98107,(206) 555-0114,fresh@smoothiebar.com,Emma Wilson,2022-03-25,active,8,1.99,6.00
+1015,Steakhouse Prime,Steakhouse,"486 Hickory Blvd",Bellevue,WA,98006,(425) 555-0115,prime@steakhouse.com,Robert Brown,2022-01-20,active,40,6.99,25.00
+
