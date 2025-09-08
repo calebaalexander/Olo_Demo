@@ -1,0 +1,54 @@
+order_item_id,order_id,item_id,quantity,unit_price,total_price,special_instructions,customizations
+5001,4001,3001,1,18.99,18.99,"Extra basil","Thin crust"
+5002,4001,3003,1,12.99,12.99,"Dressing on side",
+5003,4002,3004,1,16.99,16.99,"Mild spice level",
+5004,4002,3006,1,8.99,8.99,"Extra tofu",
+5005,4003,3007,1,13.99,13.99,"No pickles","Add bacon"
+5006,4003,3009,1,6.99,6.99,"Extra crispy",
+5007,4004,3010,2,12.99,25.98,"No onions",
+5008,4005,3013,2,14.99,29.97,"Extra wasabi",
+5009,4006,3016,1,16.99,16.99,"Well done",
+5010,4006,3017,1,5.99,5.99,"Extra garlic",
+5011,4007,3018,1,15.99,15.99,"No nuts","Extra tahini"
+5012,4007,3019,1,7.99,7.99,"Add protein powder",
+5013,4008,3020,1,22.99,22.99,"Lean cut","Extra sauce"
+5014,4008,3021,1,14.99,14.99,"No coleslaw",
+5015,4009,3022,1,13.99,13.99,"Extra noodles","Rare beef"
+5016,4009,3023,1,8.99,8.99,"Extra peanut sauce",
+5017,4010,3024,1,16.99,16.99,"No onions",
+5018,4010,3025,1,11.99,11.99,"Extra feta","No olives"
+5019,4011,3026,1,9.99,9.99,"Extra syrup","Blueberries"
+5020,4011,3027,1,11.99,11.99,"No potatoes","Extra cheese"
+5021,4012,3028,1,17.99,17.99,"Medium spice",
+5022,4012,3029,1,6.99,6.99,"Extra chutney",
+5023,4013,3030,1,15.99,15.99,"Extra chips","Malt vinegar"
+5024,4014,3019,2,7.99,15.98,"Add whey protein",
+5025,4015,3020,2,22.99,45.98,"Medium rare","Extra sides"
+5026,4016,3002,1,24.99,24.99,"Extra cheese",
+5027,4016,3017,1,5.99,5.99,"Light garlic",
+5028,4017,3005,2,14.99,29.97,"Extra vegetables",
+5029,4018,3011,1,10.99,10.99,"Extra salsa","No cheese"
+5030,4018,3012,1,7.99,7.99,"Mild salsa",
+5031,4019,3014,2,9.99,19.98,"Light batter",
+5032,4019,3015,3,4.99,14.99,"Extra green onions",
+5033,4020,3018,1,15.99,15.99,"Gluten-free","Extra dressing"
+5034,4020,3019,1,7.99,7.99,"No banana","Extra mango"
+5035,4021,3008,1,11.99,11.99,"Extra hot","Blue cheese"
+5036,4021,3009,1,7.99,7.99,"Light salt",
+5037,4022,3021,2,14.99,29.98,"Extra sauce",
+5038,4022,3017,1,6.99,6.99,"No butter",
+5039,4023,3022,1,13.99,13.99,"Extra herbs","Well done beef"
+5040,4023,3023,1,7.99,7.99,"No cilantro",
+5041,4024,3024,1,16.99,16.99,"Extra tzatziki",
+5042,4024,3025,1,10.99,10.99,"Light dressing","Extra tomatoes"
+5043,4025,3028,1,17.99,17.99,"Mild spice","Extra rice"
+5044,4025,3029,1,5.99,5.99,"Extra mint chutney",
+5045,4026,3016,1,16.99,16.99,"Extra cheese","Thick crust"
+5046,4026,3017,2,5.99,11.99,"Regular garlic",
+5047,4027,3001,1,18.99,18.99,"Regular crust",
+5048,4027,3017,1,5.99,5.99,"Light butter",
+5049,4028,3010,1,12.99,12.99,"Extra lime","Corn tortillas"
+5050,4028,3012,1,4.99,4.99,"Mild guac",
+5051,4029,3026,2,9.99,19.98,"Butter and syrup","Strawberries"
+5052,4030,3030,1,15.99,15.99,"Mushy peas","Extra tartar"
+
